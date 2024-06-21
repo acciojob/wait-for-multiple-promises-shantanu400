@@ -23,20 +23,20 @@ let PromiseArray = [
 ];
 
 let totalTime = 0;
-let table = document.getElementById('tableis');
+let table = document.getElementById('output');
 table.innerHTML = '';
 Promise.all(PromiseArray).then((datas) => {
   datas.forEach((data) => {
     totalTime += data.timeTaken;
     table.innerHTML += `
-      <tr>
+      <tr id="loading">
         <td>${data.message}</td>
         <td>${data.timeTaken}</td>
       </tr>
     `;
   });
   table.innerHTML += `
-    <tr>
+    <tr id="loading">
       <td>Total</td>
       <td>${totalTime}</td>
     </tr>
