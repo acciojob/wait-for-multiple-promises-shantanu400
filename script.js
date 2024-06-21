@@ -23,7 +23,7 @@ let PromiseArray = [
 ];
 
 let totalTime = 0;
-let table = document.getElementById('output');
+let table = document.querySelector('#output');
 table.innerHTML = ``;
 Promise.all(PromiseArray).then((datas) => {
   datas.forEach((data) => {
