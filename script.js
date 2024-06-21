@@ -1,26 +1,35 @@
-//your JS code here. If required.
-document.getElementById("btn").addEventListener('click',function(event){
-	event.preventDefault();
-	var name=documentGetElemetbyId('name').value;
-	var age=document.GetElemetById('age').value;
-	myPromise(name,age).then((data)=>{
-		alert(data);
-	}).catch((err)=>{
-		alert(err);
-	});
-	
-})
-function myPromise(name,age){
-	return new promise((res,rej)=>{
+let promiseArray=[
+	new promise((resolve,reject)=>{
+		let startTime=Date.now();
 		setTimeout(()=>{
-			if(age>18){
-				resolve(`Welcome, ${name}. You can vote.`);
-				
-			}
-			else{
-				reject(`Oh sorry,${name}. You aren't old enough.`})
-			}
-		},4000);
-	});
+			let endTime=Date.now();
+			resolve({message:"promise1 resolved",timetaken:endTime-startTime}),Math.random()*3000)
+					   }
+	}),
+	new promise((resolve,reject)=>{
+		let startTime=Date.now();
+		setTimeout(()=>
+			{let endTime=Date.now();
+			resolve({message:"promise2 resolved",timetaken:endTime-startTime}),Math.random()*3000)}
+	}),
+	new promise((resolve,reject)=>{
+		let startTime=Date.now();
+				setTimeout(()=>
+					{let endTime=Date.now();
+					resolve({message:"promise3 resolves",timetaken:endTime-startTime}),Maths.random()*3000)}
+			})
+	})
+]
+
+promise.all(promiseArray).then((datas)=>{
+	datas.forEach((data)=>{
+		let var=document.getElementById('tableis')
+		var.innerHTML=``;
+		var.innerHTML=`
+		<td>${data.message}</td>
+		<td>${data.timetaken}</td>
+	`
+	})
 	
-}
+		
+})
