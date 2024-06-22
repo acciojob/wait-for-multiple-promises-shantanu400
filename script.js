@@ -24,8 +24,9 @@ let PromiseArray = [
 
 let totalTime = 0;
 let table = document.getElementById('output');
-table.innerHTML = ``;
+
 Promise.all(PromiseArray).then((datas) => {
+	table.innerHTML = ``;
   datas.forEach((data) => {
     totalTime += data.timeTaken;
     table.innerHTML += `
