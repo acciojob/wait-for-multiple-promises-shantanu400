@@ -4,21 +4,21 @@ let PromiseArray = [
     setTimeout(() => {
       let endTime = Date.now();
       resolve({message: "Promise 1", timeTaken: (endTime - startTime)/1000});
-    }, Math.floor(Math.random()*3000)+1000);
+    }, Math.floor(Math.random()*2000)+1000);
   }),
   new Promise((resolve, reject) => {
     let startTime = Date.now();
     setTimeout(() => {
       let endTime = Date.now();
       resolve({message: "Promise 2", timeTaken: (endTime - startTime)/1000});
-    }, Math.floor(Math.random()*3000)+1000);
+    }, Math.floor(Math.random()*2000)+1000);
   }),
   new Promise((resolve, reject) => {
     let startTime = Date.now();
     setTimeout(() => {
       let endTime = Date.now();
       resolve({message: "Promise 3", timeTaken: (endTime - startTime)/1000});
-    }, Math.floor(Math.random()*3000)+1000);
+    }, Math.floor(Math.random()*2000)+1000);
   })
 ];
 
